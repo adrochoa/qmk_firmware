@@ -1,8 +1,5 @@
-# MCU name
-MCU = atmega32u4
-
-# Bootloader selection
-BOOTLOADER = atmel-dfu
+# Wildcard to allow APM32 MCU
+DFU_SUFFIX_ARGS = -p FFFF -v FFFF
 
 # Build Options
 #   change yes to no to disable
@@ -14,15 +11,8 @@ CONSOLE_ENABLE = no         # Console for debug
 COMMAND_ENABLE = no         # Commands for debug and configuration
 NKRO_ENABLE = yes           # Enable N-Key Rollover
 BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
-RGBLIGHT_ENABLE = yes       # Enable keyboard RGB underglow
+RGBLIGHT_ENABLE = no       # Enable keyboard RGB underglow
 AUDIO_ENABLE = no           # Audio output
-ENCODER_ENABLE = yes
-LTO_ENABLE = yes
-
-RGB_MATRIX_ENABLE = yes
-RGB_MATRIX_DRIVER = WS2812
-LTO_ENABLE = yes
-
-SRC += rgb_functions.c
-
-DEFAULT_FOLDER = work_louder/loop/rev3
+RGB_MATRIX_ENABLE = yes     # Enable keyboard RGB Matrix
+RGB_MATRIX_DRIVER = WS2812  # RGB matrix driver support
+WS2812_DRIVER = pwm         # WS2812 RGB Driver
